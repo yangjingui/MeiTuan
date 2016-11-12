@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>团购详情</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,
+			minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">	
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">			
+	<link rel="stylesheet" href="../iconfont/iconfont.css" />
+	<link rel="stylesheet" href="../css/meituan-detail.css" />
+	
+	<script type="text/javascript" src="../js/jquery-3.0.0.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var myScroll;
+			$('.right').on('click',function(){
+				if($('.header ul').is(':hidden')){
+					$('.header ul').slideDown();
+				}else{
+					$('.header ul').slideUp();				
+				}
+				
+			});
+		});
+		//顶部菜单显示
+		jQuery(function($){
+			var $window = $(window);
+			var $price = $('.price');
+				//给window绑定滚动事件
+		    $window.scroll(function(){				
+				if($window.scrollTop() > 150){
+			      	//当滚动条滚到大于180时，开始固定
+			       	$price.css({
+			       		position:"fixed",
+			       		top:0,
+			       		left:0,
+			       		boxShadow: '0px 0px 10px rgba(0,0,0,0.5)'
+			       	});		       			       			        
+		      	}else{
+		       		$price.css({
+		       			position:"relative",
+		       			boxShadow: '0px 0px 0px'
+		       		});		    
+		      	}		      
+		    });
+		});
+		//返回顶部
+		jQuery(function($){
+			var $window = $(window);
+			var $top = $('.gotoTop');
+				//给window绑定滚动事件
+		    $window.scroll(function(){				
+				if($window.scrollTop() > 1500){
+			      	//当滚动条滚到大于180时，开始固定
+			       	$top.show(); 			       			       			        
+		      	}else{
+		       		$top.hide();
+		      	}		      
+		    });
+		    $top.on('click',function(){
+		    	$('body').animate({'scrollTop':0},100);
+		    });
+		});	    
+	</script>
+</head>
+<body>
+	<header  class="header">
+        <div class="left">
+            <a href="#"><i class="iconfont icon-left"></i></a>
+        </div>
+        <div class="center"><span>团购详情</span></div>
+        <div class="right">
+            <a href="#"><i class="iconfont icon-shoucang"></i><span>收藏</span></a>
+        </div>
+        <div class="right">
+            <a href="#"><i class="iconfont icon-daohang"></i><span>导航</span></a>
+        </div>
+        <ul>
+            <li><a href="#"><i class="iconfont icon-shouye"></i><em>首页</em></a></li>
+            <li><a href="#"><i class="iconfont icon-wode"></i><em>我的</em></a></li>
+            <li><a href="#" data-share-text="在美团发现一个不错的团购哦，您也来看看吧。仅售 108元! 春川铁板鸡">
+            <i class="iconfont icon-fenxiang"></i><em>分享</em></a></li>
+        </ul>
+    </header>
+	<section>
+		<div class="desc">
+            <h1 class="title">	春川铁板鸡</h1>
+            <span>	春川铁板鸡套餐，建议2-3人使用</span>
+        </div>       
+	</section>
+	<div class="price">
+    	<b>108<i>元</i></b>
+		<span>门市价：180元</span>
+		<a href="#">立即购买</a>
+    </div>
+    <div class="detail">
+    	<ul class="agree">
+            <li class="color-ok"><i class="iconfont icon-tuikuan"></i>支持随时退款</li>
+            <li class="color-ok"><i class="iconfont icon-tuikuan"></i>支持过期自动退</li>
+            <li><i class="iconfont icon-wode1"></i>已售30</li>
+        </ul>
+    </div>
+    <div class="gray"></div>
+    <div class="star">
+    	<span class="star-com">
+			<i class="iconfont icon-star"></i>
+			<i class="iconfont icon-star"></i>
+			<i class="iconfont icon-star"></i>
+			<i class="iconfont icon-star"></i>
+			<i class="iconfont icon-starhalf"></i>
+			<i>4.7</i>			
+		</span>
+		<a href="#">3人评价<i class="iconfont icon-jiantou"></i></a>
+    </div>
+    <div class="gray"></div>
+    <div class="msg">
+    	<h3>商家信息</h3>
+    	<dl>
+            <dt>
+		        <a href="#">
+		            <h4> 春川铁板鸡（东城店）</h4>
+		            <h5>东城区东城西路（近大兴路）东城风情步行街A23</h5>
+		            <p><i class="iconfont icon-weizhi"></i><span>离我最近</span></p>
+		        </a>				 
+			<dd><a href="javascript:void(0);"><i class="iconfont icon-dianhua"></i></a></dd>
+        </dl>
+    </div>
+    <div class="all">
+    	<span>查看3家适用分店</span>
+    	<i class="iconfont icon-jiantou"></i>
+    </div>
+    <div class="gray"></div>
+    <dl id="deal-details" class="list">
+        <dt>套餐</dt>
+        <dd class="detail-title"><p>全部</p></dd>
+        <dd>
+	        <dl>
+		        <dd class="detail-group">
+		            <span class="left">春川铁板鸡</span>
+		            <span class="middle">2份</span>
+		            <span class="right">100元</span>
+		        </dd>
+		        <dd class="detail-group">
+		            <span class="left">奶酪</span>
+		            <span class="middle">1份</span>
+		            <span class="right">30元</span>
+		        </dd>
+		        <dd class="detail-group">
+		            <span class="left">拉面</span>
+		            <span class="middle">1份</span>
+		            <span class="right">50元</span>
+		        </dd>
+	        </dl>
+        </dd>
+        <dd class="dd-padding">
+            <ul class="ul">
+                <li>免费提供餐巾纸</li>
+                <li>小菜：店面随机赠送4个小菜【泡菜,莲藕,青瓜,花生,萝卜丝,鹌鹑蛋,北方生菜】,3碟蘸料,生菜1份；</li>
+                <li>赠送菜品：每日备菜有限，送完就没，请谅解</li>
+                <li>增值服务：铁板鸡酱料:10元/小盒,泡菜:20元/大盒,莲藕:25元/大盒</li>
+                <li>由于各分店情况不一样，具体请咨询商家为准</li>
+            </ul>
+        </dd>     
+    </dl>
+    <div class="all">
+    	<span>查看图文详情</span>
+    	<i class="iconfont icon-jiantou"></i>
+    </div>
+    <div class="gray"></div>
+	<dl class="deal-terms">
+	    <dt>购买须知</dt>
+	    <dd class="dd-padding">
+	        <ul>
+	            <li>
+	                <div class="tip-title">有效期</div>
+	                <div class="tip-des">2016.9.13 至 2016.11.11（周末、法定节假日通用）</div>
+	            </li>
+	            <li>
+	                <div class="tip-title">使用时间</div>
+	                <div class="tip-des">10:00-14:00,16:00-21:30</div>
+	            </li>
+	            <li>
+	                <div class="tip-title">使用规则</div>
+	                <ul class="ul">
+		                <li>无需预约，消费高峰时可能需要等位</li>
+		                <li>每张美团券最多3人使用，不论是否儿童均计入人数</li>
+		                <li>店内无包间</li>
+		                <li>仅限堂食，不提供餐前外带，餐毕未吃完可免费打包</li>
+		                <li>各城市分店会存在部分菜品价格不统一，以店内实际情况为主。
+							团购用户不可同时享受商家其他优惠
+							酒水饮料等问题，请致电商家咨询，以商家反馈为准
+							如部分菜品因时令或其他不可抗因素导致无法提供，店内会用等价菜品替换，具体事宜请与店内协商</li>
+		                <li>提供免费WiFi</li>
+	                </ul>
+	            </li>
+	        </ul>
+	    </dd>
+	</dl>
+	<div class="gray"></div>
+	<div class="common">
+		<h3>
+			<span>评价</span>
+			<span class="star-com">
+				<i class="iconfont icon-star"></i>
+				<i class="iconfont icon-star"></i>
+				<i class="iconfont icon-star"></i>
+				<i class="iconfont icon-star"></i>
+				<i class="iconfont icon-starhalf"></i>
+				<i>4.7</i>			
+			</span>
+		</h3>
+	</div>	
+	<dl class="content">
+		<dt>
+			<ul class="user-common">
+				<li><img src="../images/touxiang.jpg"></li>
+				<li>
+					<p>SeL50717370</p>
+					<p>
+						<span class="star-com">
+							<i class="iconfont icon-star"></i>
+							<i class="iconfont icon-star"></i>
+							<i class="iconfont icon-star"></i>
+							<i class="iconfont icon-star"></i>
+							<i class="iconfont icon-star"></i>		
+						</span>
+						<em>2016-10-12</em>
+					</p>
+				</li>
+			</ul>	
+		</dt>
+		<dd>
+			<h3>很好呢 店员和老板都很平易近人呀 嘻嘻 超可爱的 想换个电影频道还征求我们的意见很有礼貌呢 而且这次去有自助小菜免费提供噢 超饱超满足的</h3>
+			<p>春川铁板鸡（东城店）</p>
+		</dd>
+	</dl>		
+	<dl class="content">
+		<dt>
+			<ul class="user-common">
+				<li><img src="../images/touxiang.jpg"></li>
+				<li>
+					<p>SXx998704031</p>
+					<p>
+						<span class="star-com">
+							<i class="iconfont icon-star"></i>
+							<i class="iconfont icon-star"></i>
+							<i class="iconfont icon-star"></i>
+							<i class="iconfont icon-star"></i>
+							<i class="iconfont icon-star" style="color:#999;"></i>		
+						</span>
+						<em>2016-09-19</em>
+					</p>
+				</li>
+			</ul>	
+		</dt>
+		<dd>
+			<h3>没第一次好吃了。可能是吃多了！！</h3>
+			<p>春川铁板鸡（东城店）</p>
+		</dd>
+	</dl>		
+	<div class="all">
+    	<span>查看全部3条评价</span>
+    	<i class="iconfont icon-jiantou"></i>
+    </div>
+    <div class="gray"></div>
+    <div class="common">
+		<h3><span>相关分类</span></h3>
+	</div>	
+	<div class="type">
+		<a href="#"><span>美食</span></a>
+		<a href="#"><span>代金券</span></a>
+		<a href="#"><span>甜点饮品</span></a>
+		<a href="#"><span>生日蛋糕</span></a>
+		<a href="#"><span>火锅</span></a>
+		<a href="#"><span>自助餐</span></a>
+		<a href="#"><span>小吃快餐</span></a>
+		<a href="#"><span>日韩料理</span></a>
+		<a href="#"><span>西餐</span></a>
+		<a href="#"><span>聚餐宴请</span></a>
+	</div>
+	<div class="gray"></div>
+    <div class="common">
+		<h3><span>[春川铁板鸡]相关团购推荐</span></h3>
+	</div>	
+	<div class="goods">				
+    	<ul>
+    		<li><i class="iconfont icon-tuan"></i></li>
+    		<li>
+    			<h3>[广州等]春川铁板鸡2人餐</h3>
+	    		<p>
+	    			<a href="#">98<i>元</i></a>
+	    			<span>多优惠+</span>
+	    			<em>已售935</em>
+	    		</p>
+    		</li>
+    	</ul>
+    	<ul>
+    		<li><i class="iconfont icon-quan"></i></li>
+    		<li>
+    			<h3>品质四人餐，提供免费WiFi</h3>
+	    		<p>
+	    			<a href="#">268<i>元</i></a>
+	    			<span>门市价：<i>379元</i></span>
+	    			<em>已售994635</em>
+	    		</p>
+    		</li>
+    	</ul>			
+    </div>
+	<div class="all">
+    	<span>查看其他5个团购</span>
+    	<i class="iconfont icon-jiantou"></i>
+    </div>
+    <div class="gray"></div>
+    <div class="other-goods">
+	    	<h2>看了本团购的用户还看了<span>广告</span></h2>
+	    	<ul>
+	    		<span class="yuyue"></span>
+	    		<li><img src="../images/chuanmeimei.jpg" alt="" /></li>
+	    		<li>
+	    			<h3>川妹妹私房菜<span>&gt;5km</span></h3>
+	    			<p>[中山二三路]川妹妹私房菜实惠三人餐，提供免费WiFi</p>
+		    		<p>
+		    			<a href="#">￥256</a>
+		    			<em>已售256</em>
+		    		</p>
+	    		</li>
+	    	</ul>
+	    	<ul>
+	    		<span class="yuyue"></span>
+	    		<li><img src="../images/dangao.jpg" alt="" /></li>
+	    		<li>
+	    			<h3>圣诺蛋糕<span>&gt;5km</span></h3>
+	    			<p>[正佳广场]蘑菇家族蛋糕一个，约2磅</p>
+		    		<p>
+		    			<a href="#">￥256</a>
+		    			<em>已售256</em>
+		    		</p>
+	    		</li>
+	    	</ul>
+	    	<ul>
+	    		<span class="yuyue"></span>
+	    		<li><img src="../images/dangao1.jpg" alt="" /></li>
+	    		<li>
+	    			<h3>就咖啡<span>&gt;5km</span></h3>
+	    			<p>[广园新村]100元生日蛋糕一份</p>
+		    		<p>
+		    			<a href="#">￥256</a>
+		    			<em>已售256</em>
+		    		</p>
+	    		</li>
+	    	</ul>
+	    </div>
+	 <div class="gotoTop">
+    	<i class="iconfont icon-tubiao102"></i>
+    </div>
+    <footer>
+        <div class="footer-bar">
+            <div class="pull-right">
+                <span>城市:</span>
+                <space></space>
+				<a href="#" class="btn-weak footer-citybtn">广州</a>
+            </div>
+			<a href="#" class="btn-weak" rel="nofollow" data-backurl="true">登录</a>
+            <space></space><a href="#" class="btn-weak" rel="nofollow" data-backurl="true">注册</a>
+        </div>
+        <div class="footer-nav">
+            <ul>
+                <li><a class="react" href="#">首页</a></li>
+            	<li><a class="react" href="#">订单</a></li>
+            	<li><a data-pos="footer" class="react">美团下载</a></li>
+            	<li><a class="react">电脑版</a></li>
+            	<li><a class="react" >帮助</a></li>
+            </ul>
+        </div>
+        <div class="footer-links">友情链接：
+                <a href="#">猫眼电影</a>
+        </div>
+        <div class="footer-copyright">
+            <div class="hr"></div>
+            <span class="footer-copyright-text">©2016 美团网 <a href="#" >京ICP证070791号</a></span>
+        </div>
+    </footer>
+</body>
+</html>
